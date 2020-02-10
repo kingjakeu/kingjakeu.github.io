@@ -1,16 +1,17 @@
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
-relative_permalinks: true
+
+#relative_permalinks: true
 
 # Setup
 title:               'Studio u by kingjakeu'
 tagline:             'A Jekyll theme'
 description:         ''
-url:                 http://lanyon.getpoole.com
-baseurl:             ''
-paginate:            5
+url:                 https://kingjakeu.github.io
+paginate:            1
+baseurl: ""
+permalink: pretty
 
 # About/contact
 author:
@@ -22,5 +23,10 @@ author:
 version:             1.0.0
 
 plugins:
-  - jekyll-paginate
-paginate: 5
+- jekyll-gist
+- jekyll-paginate
+- jekyll-seo-tag
+
+sass:
+sass_dir: _sass
+style: :compressed
