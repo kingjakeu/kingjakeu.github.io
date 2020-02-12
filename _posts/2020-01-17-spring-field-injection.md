@@ -7,6 +7,7 @@ categories: study
 Field Injection is not recommended
 =====
 
+![spring-field-injection](https://drive.google.com/uc?id=1ail6FkIX2Jgn332nJNpTPjh39GmUOuZT)
 [##_Image|kage@cJpSAy/btqAMlpwINA/YI9wNnFDNc9XWwp5HdC3gk/img.png|alignCenter|width="100%"|_##]
 <br>
 `@Autowired`를 Bean 주입을 받다 보면 warning이 뜬다. `@Autowired`를 사용한 Bean 주입 방법은 비권장방식인 **Field Inejction** 방법을 사용 해서 Bean을 주입했기 때문이다.<br><br>
@@ -22,7 +23,7 @@ Dependency Injection 관련된 [Spring 공식 문서](https://docs.spring.io/spr
 
 생성자 기반 주입 방식  
 생성자 기반 주입 방식에서는 **클래스 생성자**에 `@Autowired`를 달아 놓고, 생성자의 **매개변수로** 의존성을 주입을 해야 할 것들을 알려준다. 생성자 기반 주입 방식의 장점으론 주입되어야 하는 **필수 적인 Bean들**을 `final`롤 선언하여 클래스가 인스턴트화 할 때 생성 할 수 있다.  
-```{java}
+```java
 @Controller
 public class ExampleController {
 
@@ -40,7 +41,7 @@ public class ExampleController {
 ### Setter-based dependency injection
 Setter 기반 주입 방식  
 Setter 기반 주입 방식에서는 setter 매소드에 `@Autowired`를 달아준다. Spring 컨테이너는 이러한 setter 매소드들을 Bean이 **no-arument constructor** 혹은 **no-argument static factory method**를 이용하여 인스턴트화 할 때 불러 실행한다.  
-```{java}
+```java
 @Controller
 public class ExampleController {
 
