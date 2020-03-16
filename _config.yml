@@ -6,12 +6,13 @@
 
 # Setup
 title:               'Studio u by kingjakeu'
-tagline:             'A Jekyll theme'
-description:         ''
+tagline:             'This is hello from jakeu'
+description:         'Studio U'
 url:                 https://kingjakeu.github.io
 paginate:            1
 baseurl: ""
 permalink: pretty
+
 
 # About/contact
 author:

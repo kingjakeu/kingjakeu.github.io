@@ -1,14 +1,10 @@
 ---
 title: "Field Injection is not recommended"
 date: 2020-01-17 22:45:00 -0400
-categories: study
+category: springboot
 ---
 
-Field Injection is not recommended
-=====
-
 ![spring-field-injection](https://drive.google.com/uc?id=1ail6FkIX2Jgn332nJNpTPjh39GmUOuZT)
-[##_Image|kage@cJpSAy/btqAMlpwINA/YI9wNnFDNc9XWwp5HdC3gk/img.png|alignCenter|width="100%"|_##]
 <br>
 `@Autowired`를 Bean 주입을 받다 보면 warning이 뜬다. `@Autowired`를 사용한 Bean 주입 방법은 비권장방식인 **Field Inejction** 방법을 사용 해서 Bean을 주입했기 때문이다.<br><br>
 
