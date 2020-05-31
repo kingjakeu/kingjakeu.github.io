@@ -2,6 +2,10 @@
 title: "Field Injection is not recommended"
 date: 2020-01-17 22:45:00 -0400
 category: springboot
+lastmod : 2020-05-31 22:45:00 -0400
+sitemap :
+  changefreq : weekly
+  priority : 1.0
 ---
 
 ![spring-field-injection](https://drive.google.com/uc?id=1ail6FkIX2Jgn332nJNpTPjh39GmUOuZT)
