@@ -1,8 +1,8 @@
 ---
-title: "REST와 RESTful API 알아보기"
+title: "Java ClassLoader 알아보기"
 date: 2020-08-10 22:35:00 +0900
 category: study
-lastmod : 2020-08-10 22:35:00 +0900
+lastmod : 2020-08-12 22:35:00 +0900
 sitemap :
   changefreq : weekly
   priority : 1.0
@@ -77,6 +77,6 @@ Delegation Model의 결과로, 상위 클래스로더에서 클래스를 찾지 
 
 ### References
 
-https://homoefficio.github.io/2018/10/13/Java-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A1%9C%EB%8D%94-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0/
-https://www.baeldung.com/java-classloaders
-https://docs.oracle.com/javase/9/migrate/toc.htm#JSMIG-GUID-A868D0B9-026F-4D46-B979-901834343F9E
+[https://homoefficio.github.io/2018/10/13/Java-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A1%9C%EB%8D%94-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0/](https://homoefficio.github.io/2018/10/13/Java-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A1%9C%EB%8D%94-%ED%9B%91%EC%96%B4%EB%B3%B4%EA%B8%B0/)  
+[https://www.baeldung.com/java-classloaders](https://www.baeldung.com/java-classloaders)  
+[https://docs.oracle.com/javase/9/migrate/toc.htm#JSMIG-GUID-A868D0B9-026F-4D46-B979-901834343F9E](https://docs.oracle.com/javase/9/migrate/toc.htm#JSMIG-GUID-A868D0B9-026F-4D46-B979-901834343F9E)  
