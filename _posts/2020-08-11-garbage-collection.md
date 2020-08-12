@@ -1,8 +1,8 @@
 ---
 title: "Garbage Collection"
-date: 2020-08-11 22:35:00 +0900
+date: 2020-08-11 21:35:00 +0900
 category: study
-lastmod : 2020-08-11 22:35:00 +0900
+lastmod : 2020-08-11 21:35:00 +0900
 sitemap :
   changefreq : weekly
   priority : 1.0
