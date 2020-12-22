@@ -144,3 +144,13 @@ public class CommonCodeRedisTest {
 https://riptutorial.com/ko/redis
 https://jojoldu.tistory.com/297
 https://stackoverflow.com/questions/37953019/wrongtype-operation-against-a-key-holding-the-wrong-kind-of-value-php
+https://www.daleseo.com/docker-networks/
+
+``` sh
+docker network create [network]
+docker network connect [network] [container]
+docker network disconnect bridge container
+docker network inspect [network]
+docker build --network [network]
+```
+
