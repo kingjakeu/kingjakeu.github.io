@@ -1,7 +1,7 @@
 ---
 title: "Garbage Collection"
 date: 2020-08-11 21:35:00 +0900
-category: study
+category: java
 lastmod : 2020-08-11 21:35:00 +0900
 sitemap :
   changefreq : weekly

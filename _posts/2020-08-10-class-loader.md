@@ -1,7 +1,7 @@
 ---
 title: "Java ClassLoader 알아보기"
 date: 2020-08-10 22:35:00 +0900
-category: study
+category: java
 lastmod : 2020-08-12 22:35:00 +0900
 sitemap :
   changefreq : weekly

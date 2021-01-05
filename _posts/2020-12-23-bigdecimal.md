@@ -1,7 +1,7 @@
 ---
 title: "BigDecimal 기본 정리, BigDecimal 활용 in Java"
 date: 2020-12-23 13:35:00 +0900
-category: study
+category: java
 lastmod : 2020-12-23 13:35:00 +0900
 sitemap :
   changefreq : weekly

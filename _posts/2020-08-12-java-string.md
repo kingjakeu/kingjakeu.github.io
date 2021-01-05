@@ -1,7 +1,7 @@
 ---
 title: "알면 좋은 String in Java"
 date: 2020-08-12 23:35:00 +0900
-category: study
+category: java
 lastmod : 2020-08-12 23:35:00 +0900
 sitemap :
   changefreq : weekly
