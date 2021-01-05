@@ -10,7 +10,7 @@ sitemap :
 
 <br>
 
-## 1. 객체(Object)와 클래스(Class)의 차이
+## 객체(Object)와 클래스(Class)의 차이
 
 ---
 
@@ -23,7 +23,7 @@ sitemap :
 
 <br>
 
-## 2. 클래스 / 객체 / 인스턴스 예시
+## 클래스 / 객체 / 인스턴스 예시
 
 ---
 
@@ -43,19 +43,20 @@ man = new Human();
 
 <br>
 
-## 3. 그 외
+## 그 외
 
 ---
 
 우리는 `.java` 파일을 생성 하면서, `class` 키워드를 통해 클래스를 미리 정의해둔다. 그리고 컴파일을 통해 `.class`파일이 생성된다.  
   
-우리가 `new`를 통해 객체를 인스턴스화 할 때, 자바의 ClassLoader는 해당 객체에 알맞은 클래스를 찾고 해당 클래스를 메모리에 올리게 된다.  
+우리가 `new`를 통해 객체를 인스턴스화 할 때, 자바의 [ClassLoader](https://kingjakeu.github.io/java/2020/08/10/class-loader/)는 해당 객체에 알맞은 클래스를 찾고 해당 클래스를 메모리에 올리게 된다.  
   
 또한 `interface`는 클래스가 아니다. 각 인터페이스에 해당되는 `.class`파일들이 컴파일시 생성이 되지만, 클래스라고 할 수 없다. 이는 `enum`, `annotation`도 마찬가지이다. 우리가 객체를 `interface`,`enum`, `annotation`로 인스턴스화를 할 수 없는 것을 생각하자.
 
 <br>
 
 ### References
+
 ---
 
 [https://www.javatpoint.com/difference-between-object-and-class](https://www.javatpoint.com/difference-between-object-and-class)  
