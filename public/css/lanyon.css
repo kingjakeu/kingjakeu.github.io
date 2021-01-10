@@ -49,12 +49,35 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 400;
   color: #313131;
   letter-spacing: -.025rem;
 }
 
+h1 {
+  font-weight: 900;
+  font-size: 36px;
+}
 
+h2 {
+  font-weight: 800;
+  font-size: 28px;
+}
+
+h3 {
+  font-weight: 800;
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+}
+
+bold {
+
+}
 /*
  * Wrapper
  *
