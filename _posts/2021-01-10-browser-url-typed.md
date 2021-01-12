@@ -1,7 +1,7 @@
 ---
 title: "웹 브라우저에 주소를 입력하면 일어나는 일"
 date: 2021-01-11 00:40:00 +0900
-category: java
+category: study
 lastmod : 2021-01-11 00:40:00 +0900
 sitemap :
   changefreq : weekly
