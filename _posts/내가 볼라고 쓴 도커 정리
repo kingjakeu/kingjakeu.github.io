@@ -1,0 +1,36 @@
+내가 볼라고 쓴 도커 정리
+
+도커란
+어플리케이션 개발 및 운영을 위한 오픈 플랫폼
+어플리케이션 인프라 구성을 나눌 수 있게 하고, 빠르게 소프트웨어를 전달한다.
+어플레케이션 관리 처럼 인프라 궁성을 관리 할 수 있음
+
+도커 컨테이너
+도커는 어플리케이션을 loosely isolated 된 환경인 컨테이너에서 실행 할 수 있게 함.
+컨테이너를 이용해서 호스트 머신에서 여러개의 컨테이너를 동시에 작동 시킬 수 있음.
+도커는 hypervisor(가상 OS를 실행 하기위한 논리적 플랫폼)가 필요 하지 않기 때문에 가볍고, 호스트 컴퓨터 커널에서 바로 동작함
+
+도커 이미지
+도커 이미지는 한번 만들면 삭제는 가능하지만 수정은 불가능한 불변성을 가지고 있음
+도커 컨테이너는 도커 이미지를 실행 하고 있는, 도커 이미지의 인스터스와도 같음.
+같은 이미지로 여러개의 컨테이너를 만들 수 있고, 실행 가능한 도커 이미지를 만들면, 어느 도커에서도 돌아감
+실행 중인 도커 컨테이너를 수정 할 수는 있지만, 이미지에 영향을 미치지 않음
+도커 이미지는 Docker hub에 등록 하거나 자체 Docker Registry 저장소를 만들어 관리 할 수 있음
+
+저장소 -> image pull -> run container 이런식
+
+
+도커 엔진
+도커 엔진은 client-server 어플리케이션
+
+[!docker engine](https://docs.docker.com/engine/images/engine-components-flow.png)
+
++ server는 계속 실행되는 프로그램으로 daemon process라고 부름. `dockerd` 커맨드
++ REST AP는 프로그램들과 데몬간의 통신, 지시에 사용
++ command line interface (CLI) 클라이언트. `docker` 커맨드, 주로 사용
+
+CLI는 REST API를 통해 도커 데몬을 제어 함
+데몬은 docker object - image, container, networks, volumes을 만들고 관리함
+
+
+CLI 명령어
