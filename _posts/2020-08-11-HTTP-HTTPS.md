@@ -8,21 +8,13 @@ sitemap :
   priority : 1.0
 ---
 
-<br>
-
 ## HTTP 란
-
----
 
 HTTP는 **평문 통신**이다. 복잡한 형식의 데이터를 주고 받는 것이 아닌, **텍스트를 주고 받는 형식**이다.  
   
 그렇기 때문에 누군가 통신을 가로챈다면 통신 그대로 보이는 **불완전한 통신**이다. 통신 상대 또한 확인하지 않고 통신한다.
 
-<br>
-
 ## HTTPS 란
-
----
 
 HTTPS는 **HTTP에 Secure Socket가 추가된 형태**  
 기존의 HTTP 통신에 **SSL 혹은 TLS 프로토콜를 조합**하여 **세션 데이터를 암호화**한다.
@@ -50,11 +42,7 @@ SSL을 이용하여 통신을 하면, 서로는 **각자 통신 대상이 누구
 **HTTPS**는 **HTTP -> SSL -> TCP**의 순서로 통신하게 된다.  
 > 또한, **HTTP**는 **80포트**를 사용하지만, **HTTPS**는 **443포트를** 사용한다.
 
-<br>
-
 ## HTTP 프로토콜의 특징
-
----
 
 ### Connectionless(비 연결지향)
 
@@ -66,18 +54,12 @@ HTTP Header에 `keep-alive`을 통해 연결을 재활용 할 수는 있지만, 
 
 - 서버와의 **연결이 끊기는 순간 통신이 끝**나며, 해당 **연결의 상태 정보를 유지하지 않는 특성**이 있다.
 
-<br>
-
 **Connectionless**와 **Stateless** 두 가지 특성 때문에,  
 **HTTP는 매 통신마다 새로운 connection**을 만들어 **인증부터 새롭게 시작**해야 하는 상황도 벌어진다.  
 
 따라서 HTTP는 **Connectionless**와 **Stateless**  특성을 보완하기 위해 **쿠키와 세션을 사용**한다.
 
-<br>
-
 ## 쿠키 & 세션
-
----
 
 ### 쿠키  
 
@@ -108,11 +90,7 @@ HTTP Header에 `keep-alive`을 통해 연결을 재활용 할 수는 있지만, 
 |라이프사이클|브라우저를 종료해도 남음|브라우저 종료시 삭제|
 |속도|빠름|느림|
 
-<br>
-
 ### References
-
----
 
 [https://jeong-pro.tistory.com/89](https://jeong-pro.tistory.com/89)  
 [https://kmj1107.tistory.com/entry/](https://kmj1107.tistory.com/entry/Http-vs-Https-Http%EC%99%80-Https%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90)  

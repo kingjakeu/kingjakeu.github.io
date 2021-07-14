@@ -8,22 +8,12 @@ sitemap :
   priority : 1.0
 ---
 
-<br>
-
 ## Garbage Collection이 하는 일
-
----
 
 Java는 OS 메모리 영역에 직접적으로 접근하지 않고, JVM을 통해 간접적으로 접근한다.  
 가비지 컬랙션은 메모리에서 Object가 필요해지지 않는 시점을 판단하고, JVM이 **메모리를 확보**할 수 있게 한다.
 
----
-
-<br>
-
 ## Java의 메모리 구조
-
----
 
 ### Stack
 
@@ -37,21 +27,13 @@ Java는 OS 메모리 영역에 직접적으로 접근하지 않고, JVM을 통�
 - Heap은 다수의 스레드가 존재하더하도 **하나의 Heap영역만 존재**한다.
 - Heap에는 긴 생명주기를 가지는 데이들이 저장된다. **모든 Object 타입들은 Heap영역에 생성**된다.
 
-<br>
-
 Heap 영역에 저장된 데이터는 Stack에 저장되어 있는 참조 변수를 통해 참조한다.  
 
 해당 Stack에서 참조 변수가 pop되어 사라져, Heap에 생성된 Object를 참조하는 변수가 없을 때, 해당 객체를 **Unreachable** 하다고 한다.  
 
 Garbage Collection은 **Unreachable 객체의 메모리 할당을 정리하는 것**이다.  
 
----
-
-<br>
-
 ## Heap 영역 구성
-
----
   
 Heap의 영역은 **Young Generation**와 **Old Generation**으로 나눌 수 있다.  
   
@@ -67,13 +49,7 @@ Heap의 영역은 **Young Generation**와 **Old Generation**으로 나눌 수 �
 - Young에서 살아남은 객체가 **Promotion(승격)**되어 Old Generation으로 복사된다.  
 - Old 영역에서 객체가 사라지는것을 **Major GC(or Full GC)**가 발생한다고 한다.  
   
----
-
-<br>
-
 ## Garbage Collection 과정
-
----
 
 1. 새로운 오브젝트는 **Eden영역**에 할당, Survial 0(S0)과 Survial 1(S1)는 비워져있는 상태에서 시작한다.  
 
@@ -91,13 +67,7 @@ Heap의 영역은 **Young Generation**와 **Old Generation**으로 나눌 수 �
 
 8. Minor GC의 반복, Promotion의 반복을 통해 Old Generation이 가득차면 **Major GC**가 발생한다.
 
----
-
-<br>
-
 ## Garbage Collector의 종류
-
----
 
 ### Serial GC (-XX:+UseSerialGC)
 
@@ -144,8 +114,6 @@ Heap의 영역은 **Young Generation**와 **Old Generation**으로 나눌 수 �
   3. G1 GC는 **evacuation(배출)**을 통해 메모리를 비운다. Evacuation 중, 하나 이상의 오브잭트들은 **하나의 지역으로 복사되어 옮겨진다**.
   즉, **메모리를 비우는 작업과 Compact를 동시에** 한다.
   4. evacuation는 Concurrent하게 다른 메소드의 처리와 동시에 처리되기 때문에, stop-the-world시간이 줄어든다.
-
----
 
 ### References
 

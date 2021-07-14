@@ -8,9 +8,7 @@ sitemap :
   priority : 1.0
 ---
 
-<br>
-
-## 1. Eureka란
+## Eureka란
 
 **Eureka(유레카)**란 **로드 밸런싱**과 **Middle-tier server**(Client와 Application server 사이)장애시 **장애 조치 처리를 목적**으로 한 **REST 기반 서비스**다.(넷플릭스에서 만듬)  
 
@@ -31,9 +29,7 @@ Eureka에 대한 자료를 찾아보면, Eureka는 **Service Discovery & Registr
 
 즉, Registry를 통해 등록 된 서비스들의 정보를 찾는 것이 Discovery다.  
 
------
-
-## 2. Eureka의 구성
+## Eureka의 구성
 
 Eureka는 Eureka **Client(클라이언트)**와 Eureka **Server(서버)**로 구성된다.  
 
@@ -52,8 +48,6 @@ Eureka는 Eureka **Client(클라이언트)**와 Eureka **Server(서버)**로 구
 + Eureka Server는 Client들로부터 **30초마다**(Default value) Client들이 작동 중임을 알 수 있는 **Heartbeat**를 수신한다.
 + **Heartbeat가 오지 않은 경우** Server는 Client가 죽었다고 판단, 90초 내에 해당 Client의 정보를 **Registry에서 삭제**한다.
 + 이렇게 유지된 Registry 정보를 **Server는 Client들에게 전달**한다.
-
-<br>
 
 ### References
 

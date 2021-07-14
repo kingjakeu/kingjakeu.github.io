@@ -8,11 +8,7 @@ sitemap :
   priority : 1.0
 ---
 
-<br>
-
 ## 인터페이스(interface)란
-
----
 
 메소드들과 상수를 가지고 있는 **추상 타입**으로, 자바의 주요 개념인 **추상화, 다형성, 다중 상속**에 사용된다.  
 
@@ -24,11 +20,7 @@ sitemap :
   
 우리는 `implements` 키워드를 통해 인터페이스를 구현 할 수 있다.
 
-<br>
-
 ## 인터페이스의 특징
-
----
 
 - 인터페이스에는 **상수, 추상 매소드, 정적 메소드, default 메소드**만 허용된다.
 - 인터페이스는 **직접 인스턴스화 할 수 없다**.
@@ -38,11 +30,7 @@ sitemap :
 - 인터페이스 **메소드**는 **private, protected, final**로 선언 할 수 없다
 - 인터페이스 **변수**는 **public, static, final**이 사용 가능하다
 
-<br>
-
 ## 왜 인터페이스를 사용하는 가
-
----
 
 ### Behavioral Functionality
 
@@ -58,13 +46,9 @@ public class StudentGradeComparator implements Comparator<Student>
 
 이렇게 `Student`와 `StudentGradeComparator` 두 개의 unrelated class들은 `Comparator`를 통해 비교를 하는 행위의 상관성을 갖게된다.  
 
-<br>
-
 ### Multiple Inheritances
 
 자바는 단일 상속만을 지원한다, 하지만 인터페이스를 사용하면 **다중의 인터페이스들로 상속하여 구현**이 가능하다.  
-
-<br>
 
 ### Polymorphism
 
@@ -77,11 +61,7 @@ public class StudentGradeComparator implements Comparator<Student>
   
 인터페이스의 다형성은 **Method Overriding 형태의 런타임 중 객체가 다른 형태**를 가지게 한다.  
 
-<br>
-
 ## 그 외
-
----
 
 ### default method in interface
 
@@ -91,11 +71,7 @@ public class StudentGradeComparator implements Comparator<Student>
   
 하지만 자바 8에서는 **default method를 통해 인터페이스 레벨**에서 구현 할수 있다.  
   
-<br>
-
 ## 구현 예시
-
----
 
 ```java
 public interface Card {
@@ -118,8 +94,6 @@ public interface Card {
 - 결제는 각 카드사마다 기능이 다르게 들어가기 때문에 오버라이드 할 수 있게 정의한다.  
 - 결제 이후 알림은 전화번호로 가는 것이 원칙이며 default으로 정의된다.  
 
-<br>
-
 ```java
 public class ShinhanCard implements Card {
     
@@ -136,15 +110,9 @@ public class ShinhanCard implements Card {
   
 - 오버라이드된 pay() 메소드는 각 카드사의 로직별로 구현되고, 결제 후 알림은 default를 따라가게 된다.  
   
-<br>
-
 ## Spring에서의 인터페이스 활용
 
----
-
 클래스를 인터페이스로 정의해두면 **Dependency Injection**에 도움이 된다.  
-
-<br>
 
 예를 들어, `Card` interface를 implements하는 `ShinhanCard`와 `SamsungCard` Bean이 있다.  
 
@@ -172,8 +140,6 @@ public class Payment {
 
 여기서 `Card`는 Spring의 **IoC에 의해 injection**이 이뤄질 것이다.  
 
-<br>
-
 만약 모든 결제가 `ShinhanCard`로 이뤄질 때에는  
 
 ```xml
@@ -190,16 +156,10 @@ public class Payment {
 <bean id="card" class="SamsungCard" />
 ```
 
-<br>
-
 이렇게 `Card` 인터페이스를 활용하여 `Payment`의 **코드를 변경하지 않고,**  
 **Spring Config 파일을을 바꾸는 것**만으로 **다른 bean으로 injection이 가능**하게 된다.  
 
-<br>
-
 ### References
-
----
 
 [https://www.baeldung.com/java-interfaces](https://www.baeldung.com/java-interfaces)  
 [https://stackoverflow.com/questions/256255/spring-and-interfaces](https://stackoverflow.com/questions/256255/spring-and-interfaces)  

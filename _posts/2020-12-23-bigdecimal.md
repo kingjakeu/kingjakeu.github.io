@@ -8,22 +8,15 @@ sitemap :
   priority : 1.0
 ---
 
-<br>
-
 ## BigDecimal을 언제, 왜 사용하는가
-
-_____
 
 **거대하고 정확한 실수 값**을 표현 할 때, 우리는 **BigDecimal**이 필요하다.  
   
 Java에서는 실수 표현을 위해, 기본 자료형으로 `double` 제공한다. 하지만 `double`은 실수의 값을 정확하게 표현하는 것이 아닌 [부동 소수점 표현](https://en.wikipedia.org/wiki/Floating-point_arithmetic)에 의해 **근사치의 값**을 가지고 있기 때문이다. 예를들어, 돈과 관련된 금액 계산을 구현해야 한다면, **BigDecimal은 필수**다.  
 
 또한 `double`의 범위는 *(1.7976931348623157 x 10308, 4.9406564584124654 x 10-324)*로 **범위 이상의 값**을 표현 할 때도 `BigDecimal`이 필요하다.  
-<br>
 
 ## BigDecimal은 값을 어떻게 저장할까
-
-_____
 
 BigDecimal은 `intVal(BigInteger), percision(int), scale(int), intCompact(int)`로 값을 구성한다.  
 
@@ -43,11 +36,7 @@ BigDecimal은 `intVal(BigInteger), percision(int), scale(int), intCompact(int)`�
     BigDecimal b3 = new BigDecimal("1234512345.12345123"); 
 ```
 
-<br>
-
 ## BigDecimal 생성
-
-_____
 
 `String, char[], int, long, double, BigInteger`를 **BigDecimal로 생성**할 수 있다.
 
@@ -93,18 +82,11 @@ public void doubleTest(){
     BigDecimal db2 = new BigDecimal(String.valueOf(d));
 ```
 
-<br>
-
 ## BigDecimal 지원 기능
-
-_____
 
 `BigDecimal`은 **arithmetic(연산), scale manipulation(범위 조정), rounding(반올림), comparison(비교), hashing(해싱), and format conversion(포멧 변경)**을 지원한다.  
 
-<br>
-
 ### Rounding (반올림/반내림/절삭)
-_____
 
 `BigDecimal`은 rounding에 대해 **사용자가 설정**하게 되어있다.  
 
@@ -130,11 +112,7 @@ _____
 |ROUND_HALF_EVEN|짝수일 경우 내림 (버려지는 수 옆의 수가 짝수이면 ROUND_HALF_DOWN, 홀수이면 ROUND_HALF_UP)|
 |ROUND_UNNECESSARY|rounding 미 설정, rounding 필요시 exception 발생 (`BigDecimal` 생성시 기본값)|
 
-<br>
-
 ### Arithmetic (연산)
-
-_____
 
 `BigDecimal`은 **add(덧셈), subtract(뺄셈), multiply(곱샘), divide(나눗셈)**의 네가지 계산 기능을 제공한다. 결과 값의 scale은 계산 후 달라진다.  
 
@@ -160,11 +138,7 @@ _____
     BigDecimal div = a.divide(b, 2, BigDecimal.ROUND_DOWN); // 소수 둘째자리까지, 내림
 ```
 
-<br>
-
 ### Comparison(비교)
-
-_____
 
 `BigDecimal`은 `Comparable` interface가 implement 된 클래스이다. 따라서 `BigDecimal` 간의 비교는 `compareTo`을 통해 할 수 있다.
 
@@ -174,11 +148,7 @@ _____
     a.compareTo(b); // a == b = 0, a > b = 1, a < b = 1
 ```
 
-<br>
-
 ### toString
-
-_____
 
 `BigDecimal`의 `toString()`은 **canonical representation**을 하기 때문에,  
 `0.0000003` 처럼 상수없이 0으로 이어지는 지수 중에 **0이 연속적으로 6개 이상** 이어질 경우 `E-notation`형태로 반환한다.  
@@ -193,11 +163,7 @@ _____
     String s2 = d.toPlainString(); // "0.0000005"
 ```
 
-<br>
-
 ## 번외, BigInteger가 값을 저장하는 법
-
-______
 
 `BigInteger`는 integer 값을 **sign(부호)** 값을 정하는 `signum`, 그리고 **정수 값을 저장**하는 `int[]`인 `mag`로 값을 저장한다.  
 
@@ -217,11 +183,7 @@ ______
 
 즉, **4294967296를 의미한다.**  
 
-<br>
-
 ### Reference
-
-_____
 
 [https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html](https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html)  
 [https://www.baeldung.com/java-bigdecimal-biginteger](https://www.baeldung.com/java-bigdecimal-biginteger)

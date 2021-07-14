@@ -8,19 +8,11 @@ sitemap :
   priority : 1.0
 ---
 
-<br>
-
 ## 1. 브라우저의 URL 문법 확인
-
----
 
 일단 웹 브라우저의 주소창에 `example.com`와 같은 웹 페이지 주소를 입력하게 되면, 웹 브라우저는 입력된 **URL의 문법**을 확인한다.  
 
-<br>
-
 ## 2. DNS 조회
-
----
 
 올바른 URL 이라고 판단이 된 후, 해당 URL을 **DNS Server에 조회** 한다.  
   
@@ -46,11 +38,7 @@ sitemap :
 
 > 기본적인 DNS 설정은 **ISP**에 의해 설정되어 있다.  
 
-<br>
-
 ## 3. ARP 확인
-
----
 
 **ARP(Address Resolution Protocol)**을 이용하여 서버의 IP주소와 MAC 주소를 찾는다.  
 
@@ -63,11 +51,7 @@ ARP(Address Resolution Protocol)는 **IP 주소의 MAC(Media Access Control) / �
 ARP 요청은 목적지 IP 주소에 물리적 주소를 `FF:FF:FF:FF:FF:FF`로 설정하여 **브로드캐스트**한다.  
 해당 IP에 설정된 서버는 **MAC 주소를 응답**한다. 이후, 응답 받은 MAC 주소를 이용하여 통신한다.  
 
-<br>
-
 ## 4. 서버 연결
-
----
 
 IP주소와 포트번호로 3-way handshaking을 통해 **TCP 연결**을 시작한다.  
   
@@ -75,11 +59,7 @@ IP주소와 포트번호로 3-way handshaking을 통해 **TCP 연결**을 시작
   
 브라우저가 서버로부터 리소스를 받게되면 **해당 리소스를 브라우저에 랜더링**을 하게 되고, 사용자는 렌더링된 브라우저를 통해 해당 웹페이지를 볼 수 있게된다.  
 
-<br>
-
 ## 정리
-
----
 
 1. 사용자는 브라우저에 웹 사이트 주소 입력
 2. 브라우저는 입력된 **URL 문법 확인**
@@ -90,11 +70,7 @@ IP주소와 포트번호로 3-way handshaking을 통해 **TCP 연결**을 시작
 7. 응답 받은 리소스, **브라우저 랜더링**
 8. 랜더링된 페이지 사용자 이용
 
-<br>
-
 ### References
-
----
 
 [https://aws.amazon.com/ko/route53/what-is-dns/](https://aws.amazon.com/ko/route53/what-is-dns/)  
 [https://www.cloudflare.com/ko-kr/learning/dns/what-is-dns/](https://www.cloudflare.com/ko-kr/learning/dns/what-is-dns/)  

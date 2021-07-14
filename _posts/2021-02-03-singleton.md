@@ -2,30 +2,20 @@
 title: "내가 보려고 쓰는 Singleton in Java"
 date: 2021-02-03 17:00:00 +0900
 category: java
-lastmod : 2021-02-03 17:00:00 +0900
+lastmod : 2021-02-04 17:00:00 +0900
 sitemap :
   changefreq : weekly
   priority : 1.0
 ---
 
-<br>
-
 ## Singleton Pattern
-
----
 
 + 전역 변수를 사용하지 않고, **객체 인스턴스를 하나만 생성**, 생성된 객체를 **어디에서든 참조**할 수 있도록 하는 패턴.
 + 싱글톤을 구현하는 방법은 여러가지가 존재하지만 공통적인 핵심은 **private constructor** 와 **global access method**이다.
 	1. private 생성자로 외부에서 객체를 생성하지 못하게 하는 것
 	2. public static 매소드로 클래스의 인스턴스를 모든 곳에서 반환 받을 수 있게 하는것이다(global access method)
 
----
-
-<br>
-
 ## Singleton 구현 방식
-
----
 
 ### Eager Initilization(이른 초기화)
 
@@ -40,8 +30,6 @@ public class Singleton {
     }
 }
 ```
-
-<br>
 
 ### Lazy Initialization(게으른 초기화)
 
@@ -59,7 +47,7 @@ public class Singleton {
 }
 ```
 
-<br>
+
 
 ### Thread Safe Singleton
 
@@ -77,7 +65,7 @@ public class Singleton{
 }
 ```
 
-<br>
+
 
 ### Lazy initialization with Double check locking
 
@@ -99,7 +87,7 @@ public class Singleton{
 }
 ```
 
-<br>
+
 
 ### Bill Pugh Singleton Implementation
 
@@ -119,7 +107,7 @@ public class Singleton {
 }
 ```
 
-<br>
+
 
 ### Reflection을 통한 Singleton의 문제
 
@@ -140,8 +128,6 @@ Bill Pugh Singleton 방식이 최적의 구현 방식이지만, Reflection을 �
     }
 ```
 
-<br>
-
 ### Enum Initialization
 
 Enum을 활용한 Singleton 구현은 Lazy Initialization을 할 수 없다.  
@@ -153,7 +139,3 @@ public enum Singleton {
     INSTANCE;
 }
 ```
-
----
-
-<br>

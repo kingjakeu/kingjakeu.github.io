@@ -8,11 +8,7 @@ sitemap :
   priority : 1.0
 ---
 
-<br>
-
 ## AOP 란
-
----
 
 **Aspect-Oriented Programming**(관점 지향 프로그래밍)는 **Cross-cutting Concern**(황단 관심사)를 이용하여 **핵심** 관심사와 **공통** 관심사를 분리하여 **프로그램의 모듈성을 증가**시키는 프로그래밍 기법이다.  
   
@@ -20,13 +16,7 @@ sitemap :
   
 데이터 베이스 트랜잭션을 설정하는 `@Transactional`이 대표적인 AOP aspect라고 할 수 있다.
 
----
-
-<br>
-
 ## AOP 구성 요소
-
----
 
 ### Business Object
 
@@ -56,13 +46,7 @@ sitemap :
     > Around -> Before -> AfterReturning, AfterThrowing -> After -> Around
 - Spring에서 Advice는 인터셉터처럼 모델화 되어있음, 인터셉터 체인을 포함
 
----
-
-<br>
-
 ## Spring AOP 구현 예제
-
----
 
 > **CASE**  
 > 카드사 연동을 통한 결제 모듈을 만들고 있다.  
@@ -72,8 +56,6 @@ sitemap :
 
 - [구현 전체 코드 참고](https://github.com/kingjakeu/spring-study/tree/aop-study)  
 
-<br>
-
 우선 Aspect를 적용할 JointPoint에 구분하여 표시할 Custom Annotation 만든다.
 
 ``` java
@@ -82,8 +64,6 @@ sitemap :
 public @interface RequestingPayment {
 }
 ```
-
-<br>
 
 이후 해당 Aspect를 통해 처리할 공통 로직을 구현한다.  
 `@RequestingPayment` 어노테이션은 PointCut 표현식에 들어가 적용 Aspect를 필터링한다.
@@ -134,8 +114,6 @@ public class RequestingPaymentAspect {
 }
 ```
 
-<br>
-
 이렇게 Aspect를 만들고 해당 모듈에 `@RequestingPayment`를 통해 Aspect를 적용한다.
 
 ``` java
@@ -144,5 +122,3 @@ public class RequestingPaymentAspect {
       // 카드 결제 요청
   }
 ```
-
-<br>

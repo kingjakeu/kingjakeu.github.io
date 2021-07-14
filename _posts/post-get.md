@@ -8,7 +8,7 @@ sitemap :
   priority : 1.0
 ---
 
-<br>
+
 
 우리는 쉽게 GET은 Resource(자원)을 조회 해오는 것이고, POST는 자원을 생성하는 것이라고 설명한다.  
 그렇다면 Web Service에서의 POST와 GET의 자세한 차이점을 알아 보자.  

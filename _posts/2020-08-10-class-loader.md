@@ -8,11 +8,7 @@ sitemap :
   priority : 1.0
 ---
 
-<br>
-
 ## Class Loader 란
-
----
 
 클래스 로더는 JRE(Java Runtime Environment)에 포함되며, **런타임 중 동적으로 자바 클래스들을 JVM에 로딩하는 역할**을 담당한다.  
   
@@ -20,13 +16,7 @@ sitemap :
   
 또한 Java 클래스는 한번에 메모리에 올라가지 않고, 클래스 로더에 의해 어플리케이션에서 **필요 할 때만 메모리에 올라가게 된다.**
 
----
-
-<br>
-
 ## ClassLoader의 종류
-
----
 
 ### Bootstrap ClassLoader
 
@@ -45,8 +35,6 @@ Bootstrap ClassLoader는 JVM 코어 중 하나며, **native 코드**로 작성�
 > **Java 9**  
 > `rt.jar` 가 사라지면서 안에 있던 내용들이 모듈화 되어 `jre/lib`폴더 안에 저장된다. Bootstrap ClassLoader가 로딩할 수 있던 클래스의 범위가 줄어들었다.
 
-<br>
-
 ### Platform ClassLoader (Extension ClassLoader in Java 8)
 
 **Bootstrap ClassLoader의 하위 클래스로더**로 기본 자바 코어 클래스들의 **extension 클래스들을 로드**한다.  
@@ -59,8 +47,6 @@ JDK extension 디렉토리에서 클래스들을 로드한다.
 > **Java 9**  
 > 이름이 Platform ClassLoader로 변경되었으며, 더이상 `java.ext.dirs` 와 `lib/ext`를 지원 하지 않는다. Extension 클래스들을 사용하길 원한다면 class path에 JAR파일들을 놔야한다. `URLClassLoader`를 사용하지 않고 `BuiltinClassLoader`를 상속, 내부 static 클래스로 구현된다.
 
-<br>
-
 ### System ClassLoader (Application ClassLoader in Java 8)
 
 **어플리케이션 레벨에 있는 모든 클래스들을 JVM에 로딩** 한다. 즉, 사용자가 작성한 코드들을 로딩한다.  
@@ -70,13 +56,7 @@ Plaform ClassLoader의 하위으로, classpath 환경 변수에 있는 파일들
 > **Java 9**  
 > 이름이 System ClassLoader로 변경. `URLClassLoader`를 사용하지 않고, `BuiltinClassLoader`를 상속, 내부 static 클래스로 구현된다.
 
----
-
-<br>
-
 ## ClassLoader의 특징
-
----
 
 ### Delegation Model
 
@@ -90,24 +70,16 @@ Bootstrap ClassLoader 에서 클래스 로딩에 실패하고 Platform ClassLoad
 
 > 마지막까지 클래스 로딩에 실패 했을 경우 `ClassNotFoundException`이 발생
 
-<br>
-
 ### Unique Classes
 
 Delegation Model의 결과로, 상위 클래스로더에서 클래스를 찾지 못했을 때만, 하위 클래스로더가 클래스 로딩을 시도 할 수 있다.
 
 **즉, 하위 클래스로더는 상위 클래스로더가 로딩한 클래스를 다시 로딩 하지 않기 때문에 로딩된 클래스의 유일성을 보장한다.**
 
-<br>
-
 ### Visibility
 
 하위 클래스로더들은 상위 클래스로더가 로드한 클래스들을 볼 수 있다.  
 하지만 상위 클래스로더는 하위 클래스로더가 로드한 클래스들을 볼 수 없다.
-
----
-
-<br>
 
 ### References
 

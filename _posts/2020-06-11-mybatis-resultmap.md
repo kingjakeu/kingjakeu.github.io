@@ -55,8 +55,6 @@ public class MerchantInfo{
 
 **주의 : resultMap을 이용하여 Mapping을 할 필드는 `Setter`를 무조건 가지고 있어야 한다!**
 
-<br>
-
 이제 DB의 컬럼과 객체 변수 명도 다르고, **객체안에 객체**가 있는 형태가 됐다.  
   
 사용하는 SQL문에 하나씩 Mapping 해서 사용하는 원시적인 방법도 있지만, **재사용성과 JOIN이 포함된 복잡한 구문들**을 위해 ResultMap을 사용해보자.  
@@ -80,8 +78,6 @@ Mybatis에선 ResultMap을 사용한 내가 원하는 대로, 테이블의 컬�
     </resultMap>
 ```
 
-<br>
-
 #### 간단 resultMap 속성 설명  
 
 |속성|설명|
@@ -90,7 +86,6 @@ Mybatis에선 ResultMap을 사용한 내가 원하는 대로, 테이블의 컬�
 |`association`|간단한 데이터 타입 필드가 아닌, 객체를 Mapping|
 |`collection`|Collection, 즉 List같은 Collection을 Mapping|
 
-<br>
 이렇게 만든 resultMap을 select 구문에 resultMap으로 지정해주면  
 
 ```xml

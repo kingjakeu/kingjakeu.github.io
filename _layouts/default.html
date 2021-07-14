@@ -4,13 +4,12 @@
   {% include head.html %}
 
   <body>
-
-    {% include sidebar.html %}
-
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
+      {% include sidebar.html %}
       <div class="masthead">
+        <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+        
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
         <div class="container">
           <h3 class="masthead-title">
             <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
@@ -23,9 +22,6 @@
         {{ content }}
       </div>
     </div>
-
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
     <script>
       (function(document) {
         var toggle = document.querySelector('.sidebar-toggle');
@@ -44,4 +40,9 @@
       })(document);
     </script>
   </body>
+  <footer>
+    <p>
+      &copy; {{ site.time | date: '%Y' }}. All rights reserved by kingjakeu.
+    </p>
+  </div>
 </html>

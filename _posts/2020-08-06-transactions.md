@@ -8,21 +8,13 @@ sitemap :
   priority : 1.0
 ---
 
-<br>
-
 ## 트랜잭션이란
-
----
 
 데이터베이스의 상태를 변환하는 하나 이상의 데이터베이스 연산의 논리적 단위이다.  
   
 DBMS는 하나의 트랜잭션에 여러 개의 연산이 **전부 처리되어 Commit**되거나 아니면 **전부 적용 되지 않도록 Rollback**한다.
 
-<br>
-
 ## 트랜잭션의 특징 (ACID)
-
----
 
 ### Atomicity (원자성)
 
@@ -63,11 +55,7 @@ DBMS는 하나의 트랜잭션에 여러 개의 연산이 **전부 처리되어 
 >  
 > 이후 시스템 장애로 인해, 서버가 다운이 되었어도, 완료된 트랜잭션은 반영되어 **영구성**을 유지해야 한다.
 
-<br>
-
 ## 트랜잭션 격리 수준
-
----
 
 ### READ_UNCOMMITTED
 
@@ -95,11 +83,7 @@ DBMS는 하나의 트랜잭션에 여러 개의 연산이 **전부 처리되어 
 - 트랜잭션이 완료될 때까지 Shared Lock, **수정 및 입력 불가능**하게 한다
 - 활용도가 낮고 사용하는 곳이 적음
 
-<br>
-
 ## 트랜잭션 전파 (Propagation)
-
----
 
 스프링 `@Transactional` 기준, 트랜잭션의 생성 혹은 참여하는 전파 옵션
 
@@ -124,11 +108,7 @@ DBMS는 하나의 트랜잭션에 여러 개의 연산이 **전부 처리되어 
 - **NESTED**  
     진행 중인 트랜잭션이 있으면 중첩해서, 트랜잭션 안에 트랜잭션을 만든다. 중첩된 트랜잭션내에서 자식 트랜잭션은 부모에게 영향을 주지 못한다.  
 
-<br>
-
 ### References
-
----
 
 [https://nesoy.github.io/articles/2019-05/Database-Transaction-isolation](https://nesoy.github.io/articles/2019-05/Database-Transaction-isolation)  
 [http://www.dbguide.net/db.db?cmd=view&boardUid=148216&boardConfigUid=9&boardIdx=138&boardStep=1](http://www.dbguide.net/db.db?cmd=view&boardUid=148216&boardConfigUid=9&boardIdx=138&boardStep=1)  
