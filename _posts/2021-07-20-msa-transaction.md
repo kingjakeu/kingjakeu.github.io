@@ -30,6 +30,8 @@ MSA 환경에서는 각 서비스들은 서로 DB가 다를 수 있기 때문에
   
 ### 2 Phase Commit Protocol 알고리즘
 
+![2-phase-commit](https://drive.google.com/uc?id=1QXqHoEb4yE_PmbpciL_69FdBL4UlwECY)
+
 1. 클라이언트는 Coordinator에게 데이터 갱신 요청을 한다.
 2. Coordinator는 모든 Participanats에게 `Commit requestig`을 요청한다.
 3. Participanats는 `prepare`로 데이터 상태를 변경 후, Coordinator에게 `OK` 응답을 한다.
@@ -55,7 +57,12 @@ Saga는 연속적으로 있는 `local transaction`들의 순서이다.
 
 ### Saga Pattern 종류
 
+![2-phase-commit](https://drive.google.com/uc?id=18oVfqG9h_bRXoj2P3JThe5p__wYIfpZD)
+
 - **Choreography** - 각 local transction은 다른 서비스의 local transaction을 작동 시키는 이벤트을 발행한다.
+
+![2-phase-commit](https://drive.google.com/uc?id=1j51JgW-SOeSF5l5FoxpVACOP3xdrvS_k)
+
 - **Orchestration** - orchestrator이 각 서비스들의 local transaction을 실행 하도록 관리한다.
 
 ### References
