@@ -1,4 +1,27 @@
-# 코드 리뷰 준비
+## SELECT FOR UPDATE와 LOCK IN SHARE MODE
+
+- 먼저 lock을 획득한 세션의 로우들이 update 쿼리후 commit 될기 전까지 다른 세션들은 수정하지 못함
+- 다른 세션들 LOCK WAIT TIME 동안 대기
+- FOR UPDATE: 대상 레코드가 다른 트랜잭션의 읽기나 쓰기 잠금 사용 중이면 대기
+- LOCK IN SHARE MODE: 대상 레코드에 쓰기 잠금이 걸려 있으면 대기, 읽기 잠금은 통과
+- LOCK IN SHARE MODE에서 쓰기 락을 획득하려면 데드락 유발
+
+## Lock의 적용 요소에 따른 종류
+
+- Shared Lock : read lock, shared lock이 걸려 있는 동안 해당 row에 exclusive lock 획득 불가능
+- Exclusive Lock: writed lock, 걸려 있으면 read & write 둘 다 획득 불가능
+- Intention Lock : table-level lock으로, 해당 row에 락을 걸 거라고 미리 의도하는 것
+
+## Lock이 적용되는 상황에 따른 종류
+
+- Record Lock: 해당 레코드에만 락을 거는것
+- Gap Lock: 범위(Gap)에 락을 거는 것
+- next-key Lcok: record와 gap을 복합 사용
+
+## NOWAIT과 SKIP LOCKED
+
+- skip locked 사용시 락이 걸린 로우를 제외한 로우들을 가져옴
+- no wait: 해당 로우에 락이 걸려있으면 기다리 않고 바로 실패 처리
 
 ## DB 설계 기준
 
@@ -31,27 +54,3 @@
 값을 되돌려 줄 때 테이블의 모든 컬럼을 반환 비효율적
 SQL 파서는 Data dictionary에서 해당 테이블에 대한 모든 컬럼을 읽어 대체
 
-## SELECT FOR UPDATE와 LOCK IN SHARE MODE
-
-- 먼저 lock을 획득한 세션의 로우들이 update 쿼리후 commit 될기 전까지 다른 세션들은 수정하지 못함
-- 다른 세션들 LOCK WAIT TIME 동안 대기
-- FOR UPDATE: 대상 레코드가 다른 트랜잭션의 읽기나 쓰기 잠금 사용 중이면 대기
-- LOCK IN SHARE MODE: 대상 레코드에 쓰기 잠금이 걸려 있으면 대기, 읽기 잠금은 통과
-- LOCK IN SHARE MODE에서 쓰기 락을 획득하려면 데드락 유발
-
-## Lock의 적용 요소에 따른 종류
-
-- Shared Lock : read lock, shared lock이 걸려 있는 동안 해당 row에 exclusive lock 획득 불가능
-- Exclusive Lock: writed lock, 걸려 있으면 read & write 둘 다 획득 불가능
-- Intention Lock : table-level lock으로, 해당 row에 락을 걸 거라고 미리 의도하는 것
-
-## Lock이 적용되는 상황에 따른 종류
-
-- Record Lock: 해당 레코드에만 락을 거는것
-- Gap Lock: 범위(Gap)에 락을 거는 것
-- next-key Lcok: record와 gap을 복합 사용
-
-## NOWAIT과 SKIP LOCKED
-
-- skip locked 사용시 락이 걸린 로우를 제외한 로우들을 가져옴
-- no wait: 해당 로우에 락이 걸려있으면 기다리 않고 바로 실패 처리
