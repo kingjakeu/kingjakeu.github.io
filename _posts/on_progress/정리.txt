@@ -1,0 +1,237 @@
+REST
+동등성과 동일성의 차이를 아는지?
+
+세션이 뭔가요? 서버 여러 대일 때 세션을 어떻게 처리하죠?
+- 세션이란 서버가 저장하고 있는 클라이언트의 상태
+- 다중 서버 환경에서 세션을 관리하는 기법으로는
+  - Sticky Session
+    - 고정된 세션, 로드 밸런서가 사용자의 쿠키를 기준으로 접속된 서버에 접속 하게 만듬
+    - 고정된 세션은 세션의 정합성 문제는 해결할 수 있지만, 트래픽 관리 혹은 서버 다운시 세션이 유실됌
+  - Session Clustering
+    - 모든 세션 저장소에 세션 객체를 복제
+    - 많은 메모리가 필요, 서버 수가 증가하면 성능 저하 발생 
+  - In-Memory DB 세션 스토리지
+    - Redis같은 in-Memory 스토리지를 활용, 세션을 저장
+    - 서버가 늘어 나더라도, 세션 스토리지에 저장만 하면 됌
+
+서블릿이 뭔가요?
+- 웹기반의 요청을 request-reponse 형식의 프로그래밍 모델로 접근 하여 처리 할수 있게하는 자바 클래스
+
+데이터베이스 인덱스 동작 과정
+- 인덱스는 정렬이 되어 있는 상태
+- Range Scan을 통해 해당 범위를 넘어서는 값을 만나면 멈춤
+- B-Tree로 저장
+
+캐시가 무엇인가요? redis 같은 걸 캐싱 서버로 사용해보신적 있으신가요?
+- 캐실란 자주 사용하는 데이터를 메모리에 미리 올려 놓은 임시 저장소
+
+Call by value와 Call by reference 차이
+- call by value의 경우, value 자체를 들고 메소드로 넘어가 동작
+- call by reference의 경우 value의 reference 값을 들고가 동작
+
+PreparedStatment와 Statement의 차이는 무엇인가요?
+- preparedstatement는 처음 실행될때 컴파일을 하고 결과 값을 캐시에 저장한다.
+  - 다음에 사용할때 동적으로 인자만 바꿔서 사용할 수 있다
+- statement는 매번 실행될때 컴파일을 하며, 동적으로 인자를 바꾸는 것이 아닌 완성된 sql 
+  - 단일 성능은 statement가 좋음 
+
+Deep Copy와 Shallow Copy에 대해 설명해주세요.
+
+OAuth 의 흐름에 대해 설명해주세요.
+
+객체를 나누는 기준이 무엇인가?
+커밋 컨벤션에서 feat, chore, refactor 등. 각각 어떤 기준으로 나누어 사용했는지?
+
+OOP가 무엇인가요?
+OOP를 썼을 때 어떤 점이 좋았고 안좋았는지?
+OOP를 잘하기 위해 어떤 노력을 했는지?
+객체를 나누다 보면 오히려 코드가 보기 힘들지 않나?
+
+사전에서 검색을 제공하는 Application을 만들건데 어떤 자료구조를 쓰실 건가요?
+기억에 남는 프로젝트와 어떤 점에서 기억에 남는 지 설명해주세요.
+여기서 아쉬웠던 점을 설명해주시고, 어떻게 개선했는지? 아니면 개선 방안을 설명해주세요.
+트리 구조에 대해 설명 해주세요.
+이진 트리에 대해 설명 해주세요.
+Binary Search Tree에 대해 설명해주세요.
+
+브라우저에서 서버 응답까지의 흐름
+CI/CD 에 대해 각각 설명해주세요.
+최근에 하신 프로젝트가 어떤 구조로 되어있는지 그림으로 그리면서 설명해주세요.
+프로젝트에서 Git flow 적용 하셨다고 하셨는데, 어떤 식으로 하셨는지 설명해주세요.
+어떤 장점, 단점이 있는지?
+DTO가 무엇이죠?
+Presentation - Application - Domain Layer를 나눈 기준은?
+각 Layer가 하는 역할은?
+DB Optimizer
+아는 정렬 알고리즘 설명해주세요
+그 정렬 알고리즘의 시간복잡도는 어떻게 되나요
+프로세스와 쓰레드의 차이점은?
+PCB에 저장되는 정보는 어떤 것들이 있나요?
+Context Switching에 대해 설명해 주세요.
+TCP 와 UDP의 차이점에 대해 설명해 주세요.
+프로젝트에서 단위 테스트 어떻게 하셨나요? 통합 테스트는 어떻게 하셨나요?
+알고 계신 테스트의 종류를 말씀해주세요. (유닛 테스트, 통합 테스트 등…)
+각 테스트들에 대해 설명해주세요.
+로컬 개발 환경에서도 도커를 활용해서 개발하셨는지?
+OOP를 지향하기 위해 어떤 노력을 할 수 있는지?
+Layered Architecture에서 Presentation, Application, Domain, InfraStructure layer의 역할에 대해 설명해 주세요.
+DDD에 대해 알거나 공부해봤는지?
+DDD에서 Domain이 무엇인지?
+CQRS, 이벤트 소싱에 대해 아는지?
+최근 했던 프로젝트의 패키지 구조에 대해 설명해주세요. (선호하는 패키지 구조)
+Connection Pool을 쓰는 이유는? 단순히 커넥션을 새로 만드는 것과 차이는?
+그러면 Connection을 만드는 시간을 제외하고는 다른 장점은 없나요?
+Connection Pool의 최대치가 1000개, WAS가 5개라고 해보자. 각 WAS는 200개씩의 Connection을 가지는지? 그렇다면 6번째 WAS가 추가된다면 6번째에는 아무런 Connection도 할당되지 않는지?
+SOLID중 한가지 설명해주세요.
+재귀의 장점, 단점?
+Sync vs. Async 차이
+MyISAM과 InnoDB의 차이점
+단방향 암호화의 장점이 뭐냐
+GET/POST의 차이는?
+HTTP vs. HTTPS의 차이는?
+XSS 에 대해 설명해주세요
+XSS 를 막기 위해서는 어떤 방법이 있는지?
+인증 토큰 방식과 세션을 통한 인증 방식은 어떤 점에서 다른지?
+백엔드 단에서 성능을 올릴 수 있는 방법은?
+데이터베이스에서 왜 여러 테이블을 두는지?
+최근에 했던 프로젝트 구조를 화이트보드 이용해서 설명해주세요.
+Inner Join과 Outer Join에 대해 설명해주세요.
+보통 면접에선 이런거 물어보던데~ 했는데 혹시 저희가 물어보지 않아서 아쉬웠던 질문이 있나요? 있으시면 질문과 함께 답변 해주세요.
+마지막으로, 준비 많이 해왔는데~ 또는 이건 꼭 답하고 가고 싶다 하는 내용 있으신가요?
+Github의 장점은?
+Git에서 써본 명령어들은 어떤게 있나요?
+그 명령어들에 대해서 설명해주세요.
+코드 스멜을 느끼게 되는 기준은 어떻게 되시나요?
+코드 스멜을 느끼게 되는 것을 경험 기반으로 설명해주세요.
+Blue-Green 배포에 대해 설명해주세요.
+구현 하신 부분에서 개선할 점이 있다면 어떤 것이 있는지?
+그 외에 무중단 배포 방법 아시는 것 설명해주세요.
+쿠키에 대해서 설명해주세요.
+로컬 스토리지에 대해 설명해주세요.
+프론트와 API 서버간에 어떻게 통신을 하는지, 구현을 어떻게 했는지 설명해주세요
+HTTP Method에 대해서 각각 설명해주세요.
+PUT은 update만 되나요?
+CLOSE_WAIT, TIME_WAIT에 대해 설명해주세요.
+이벤트 같은 것을 할 때(순간적으로 트래픽이 높아질 수 있는 순간) 아키텍처적으로 어떻게 설계할 것인지?
+쿼리 잘 짜세요?
+Web Server와 WAS의 차이점, 각각 설명해주세요.
+사용할 수 있는, 사용해본 프로그래밍 언어는 어떤 것들이 있는지? 각각 어느정도의 수준인지?
+정규표현식에서 =?를 부르는 이름은? 그 외 정규표현식 질문들 (어떤 정규표현식이 뜻하는 의미 해석이라던가)
+WebSocket 사용할 때 기본 프로토콜을 사용했는지? 아니면 직접 구현한 프로토콜을 사용했는지? (어떤 의미인지 모르겠음)
+Reactive programming과 Observable에 관해 설명해주세요.
+Reactive programming과 함수형 프로그래밍은 어떤 차이가 있는지 각각 어떤 특징이 있는지 설명해주세요.
+정적타이핑 언어와 동적타이핑 언어의 장, 단점을 설명해주세요.
+Http 제외하고 다른 프로토콜에 대해 아시는 거 설명해주세요.
+Non Blocking I/O와 Blocking I/O에 대해서 설명해주시고, 각각 어떤 곳에 사용되는지 예시를 들어주세요.
+List의 장점을 Array와 비교하여 설명해주세요.
+테스트가 무엇인가요?
+테스트를 왜 작성하셨나요?
+본인만의 리팩토링에 대한 정의?
+리팩토링은 어느 시점에 해야할까요?
+유연한 코드는 무엇인가요?
+응집도 vs. 결합도
+테스트하기 쉬운 코드는 어떤 코드인가요?
+
+Spring 질문
+Spring bean scope
+- Singleton
+- ProtoType
+  - 요청이 들어올때 마다 생성
+- Web Application(Request, Session, Application)
+
+Spring에서 DI나 IOC 개념을 설명해주세요.
+Spring에서 Service, Controller, Repository annotation의 차이점
+
+Controller, RestController는 뭐가 다른가요? 응답이 어떻게 다른가요?
+- RestController는 Controller + ResponseBody 가 합쳐진 개념
+  - 데이터를 그대로 전달하기 위해 사용
+- Controller는 응답시 알맞은 ViewResolver를 찾고 view가 반환됌
+
+Spring에서 서비스와 컴포넌트의 차이
+다른 프레임워크들도 많이 있는데, 특별히 Spring boot를 사용한 이유가 있는지?
+IoC Container 직접 만든다면 어떻게 구현하실 생각인가요?
+
+스프링에서 빈 등록 방법
+- xml을 통해 bean property 설정
+- component scan
+- @configuration을 통해 등록
+- config에 component scan
+- springboot = springbootapplication = componentScan + Configuration
+
+Spring MVC 설명
+Spring MVC 에서 요청이 들어왔을 때부터 응답이 나갈 때까지의 흐름을 설명해주세요.
+
+ControllerAdvice가 무엇인가요?
+- 모든 컨트롤러 영역에서 발생 할 수 있는 예외를 잡아 처리
+
+Interceptor와 Filter 차이
+Field 주입과 생성자 주입, Setter 주입
+Spring Web MVC에서 요청이 들어와서 Database까지의 흐름
+AOP에 대해 설명해주세요
+SpringBoot 왜 쓰셨나요?
+
+SpringBoot의 장점은 무엇인가요?
+- 라이브러리 버전 자동관리, 설정 자동화, 내장 톰켓, 실행가능한 JAR 생성 가능
+
+Java 관련 질문
+ 
+객체가 JVM 메모리에 저장될 때 어디에 저장되는지?
+- 메모리에 힙영역에 저장됌
+
+Stream이 무엇인가요?
+- 배열 또는 컬랙션에 함수 여러개를 조합하여 원하는 결과를 필터링하고 가공된 결과를 얻을 수 있게함
+- 병렬 처리 가능
+
+롬복이 생성하는 메서드가 어느 시점에서 생성되는 지 아는지?
+- 롬복 메소드는 컴파일 시점에 생성됌
+
+StringBuilder와 StringBuffer
+- 둘 다 가변적인 스트링을 생성할 때 사용
+- 차이점은 Builder는 Thread-safe, buffer는 thread-safe 하지 않음
+
+HashMap의 시간 복잡도 말해주세요.
+
+자바 디자인패턴 아는 것 중 하나 설명해주세요.
+
+Checked Exception은 언제 사용하나요?
+- io와 같은 exception이 발생했을때, 후 처리가 필요한 예외
+
+Unchecked, Checked Exception 차이가 뭔가요?
+- unchecked는 발생시 exception을 반드시 catch하지 않아도 된다.
+- unchecked는 롤백, checked는 롤백이 되지 않는다
+
+equals and hashcode 재구현한 이유?
+- 직렬화를 하게 될 경우, 해당 객체의 정보가 동등한지 확인 하기 위해 equals를 구현
+- 또한 저장시 
+
+JVM과 GC에 대해 설명해주세요.
+GC가 언제 동작하는지 설명해주세요.
+
+JUnit의 생명주기에 대해 아는지?
+
+Java의 세 가지 변수에 대해 JVM 메모리와 연관지어 설명해주세요.
+- local 
+    - 메서드 내부 선언, 스택에 생성
+- instance
+    - new 키워드를 통해 생성, 힙 메모리에 생성, gc 대상
+- static
+    - 클래스를 메모리에 로딩 했을 때 생성 
+
+Generic을 쓰는 이유는?
+
+Java에서 동일한 String을 새로 만들 때마다 객체가 생성되는지?
+예를 들어 String a = Apple; 해놓고, String b = Apple;하면 String b를 위한 공간이 새로 할당 되는지?
+
+Java에서 람다가 무엇인지 말씀해주세요.
+
+JVM 기반 언어의 특징을 설명해주세요.
+
+Java 8 에서 나온 Date, Time API에 대해 아는대로 말씀해주세요.
+
+Overloading, Overriding을 각각 설명해주세요.
+
+String을 ==로 비교하면 안되는 이유를 설명해주세요.
+
+Integer.MIN_VALUE에는 어떤 값이 들어가있나요? 어떤 컴퓨터에서 찍어도 동일한 값인가요?
+
+JUnit 4 와 JUnit 5의 차이를 설명해주세요.
