@@ -1,8 +1,8 @@
 ---
-title: "Springboot에서 Redis Stream 활용"
-date: 2022-02-07 23:59:00 +0900
-category: study
-lastmod : 2021-02-07 23:59:00 +0900
+title: "Spring Boot에서의 Redis Stream 활용 예제 구현"
+date: 2022-02-10 23:59:00 +0900
+category: springboot
+lastmod : 2021-02-10 23:59:00 +0900
 sitemap :
   changefreq : weekly
   priority : 1.0
@@ -15,7 +15,11 @@ Springboot에서 Redis Stream(레디스 스트림)을 사용하기 위한 기본
 - Redis 5.0 이상
 - Redis Client로 Lettuce 사용
 
-위 설정이 완료되면 Redis Stream을 Spring Boot를 통해 사용해보자.
+위 설정이 완료되면 Redis Stream을 Spring Boot를 통해 사용해보자.  
+
+Redis Stream에 대해 처음 접해본다면 ["Redis Stream (레디스 스트림) 기본 정리](https://kingjakeu.github.io/study/2022/02/07/about-redis-stream/)을 먼저 보는 것을 추천한다.  
+
+예제 전체 코드는 [Github](https://github.com/kingjakeu/springboot-redis-stream)에 있습니다. 
 
 ## Redis 기본 Command 구현
 
@@ -102,16 +106,18 @@ public boolean isStreamConsumerGroupExist(String streamKey, String consumerGroup
 }
 ```
 
+---
+
 ## Redis Stream Consumer 구현
 
-대부분 Redis Stream을 사용하는 이유로는 Consumer Group을 설정하고, Consumer Group을 통해 Redis Stream의 메시지를 Event-Driven 형태로 Subscribe하기 위함일 것이다.
+대부분 Redis Stream을 사용하는 이유로는 **Consumer Group**을 설정하고, Consumer Group을 통해 Redis Stream의 메시지를 **Event-Driven 형태**로 **Subscribe**하기 위함일 것이다.
 
 Spring Boot에서 해당 기능들을 구현 하기 위해선,
 1. 메시지를 받을 수 있는 `StreamListener`를 implement 한 Consumer Bean을 생성
 2. `StreamMessageListenerContainer`을 통해 Redis에서 StreamMessage을 받을 수 있게 설정
 3. 해당 `StreamMessageListenerContainer`을 사용하는 `Subscription`을 Stream 정보와 함께 설정해야 한다.
 
-우선 Consumer Bean 부터 생성해보자.
+우선 **Consumer Bean** 부터 생성해보자.
 
 ```java
 @Slf4j
@@ -131,7 +137,8 @@ public class RedisStreamConsumer implements StreamListener<String, MapRecord<Str
 }
 ```
 
-Consumer Bean은 3개의 interface를 implements 하도록 한다.
+Consumer Bean은 **3개의 interface**를 implements 하도록 한다.  
+
 - `InitializingBean`: Bean 생성시 `StreamMessageListenerContainer`와 `Subscription` 생성
 
 ```java
@@ -201,6 +208,8 @@ public void onMessage(MapRecord<String, Object, Object> message) {
 }
 ```
 
+---
+
 ## Pending Message 처리 Scheduler 구현 
 
 Redis Stream의 메시지를 수신하는 Consumer는 구현됐지만, `Consumer.onMessage`에서 로직을 처리를 하다가 에러가 발생, `XACK`를 하지 않은 메시지들은 어떻게 될까?
@@ -269,3 +278,16 @@ public void processPendingMessage(){
 }
 ```
 
+--- 
+
+## Conclusion
+
+Spring Boot에서 Redis Stream을 활용 할 수 있는 간단한 예제를 만들어 보았다.
+Springboot에서 Redis Stream 사용 예제가 정보가 적길래, Consumer & Pending Scheduler를 구현한 예제를 정리해봤다.
+누군가에게 도움이 되고 틀린 정보가 없기를 바란다.
+
+
+### References
+
+- [https://docs.spring.io/spring-data/data-redis/docs/current/reference/html/#redis.streams](https://docs.spring.io/spring-data/data-redis/docs/current/reference/html/#redis.streams)
+- [https://github.com/amitiamity/redis-stream-kickstart](https://github.com/amitiamity/redis-stream-kickstart)
