@@ -312,7 +312,8 @@ Consumer를 설정 하고, Subscription이 자동으로 돌아가는 시스템�
 Kafka 또는 Redis pub/sub에 비해 압도적으로 정보가 적기에, 기억 할겸 누군가에게 도움이 될까 해서 작성해본다.
 사실 Redis 공식 문서에 더 자세하게 설명되어 있지만, 쉽게 이해해보기 위해 노력해봤다.  
 
-다음 글은 Springboot을 통해 Redis Stream을 사용한 예제에 대해 작성할 예정이다.
+Spring Boot를 활용한 Redis Stream 사용 예제 구현은 
+[Spring Boot에서의 Redis Stream 활용 예제 구현](https://kingjakeu.github.io/springboot/2022/02/10/spring-boot-redis-stream/)에 정리해뒀다.
 
 ### Reference
 - [https://redis.io/topics/streams-intro](https://redis.io/topics/streams-intro)
